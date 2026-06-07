@@ -37,6 +37,22 @@
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.3",
     "unplugin-auto-import": "^19.3.0",
-     "source-map": "^0.7.6"
-  }
+    "source-map": "^0.7.6"
+  },
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agarduno17/las_cocineras.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agarduno17/las_cocineras/issues"
+  },
+  "homepage": "https://github.com/agarduno17/las_cocineras#readme"
 }

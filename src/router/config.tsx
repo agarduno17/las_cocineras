@@ -1,11 +1,11 @@
 import { lazy } from 'react';
-import { RouteObject } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import type { RouteObject } from 'react-router-dom';
 
 const HomePage = lazy(() => import('../pages/home/page'));
 const ProductsPage = lazy(() => import('../pages/products/page'));
 const ApplicationsPage = lazy(() => import('../pages/applications/page'));
 const AboutPage = lazy(() => import('../pages/about/page'));
-const ProcessPage = lazy(() => import('../pages/process/page'));
 const FAQPage = lazy(() => import('../pages/faq/page'));
 const ContactPage = lazy(() => import('../pages/contact/page'));
 const NotFound = lazy(() => import('../pages/NotFound'));
@@ -28,8 +28,9 @@ const routes: RouteObject[] = [
     element: <AboutPage />
   },
   {
+    // La sección "Proceso" fue cancelada por el cliente; redirigimos a Inicio.
     path: '/proceso',
-    element: <ProcessPage />
+    element: <Navigate to="/" replace />
   },
   {
     path: '/preguntas-frecuentes',

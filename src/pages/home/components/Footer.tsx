@@ -57,8 +57,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/proceso" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
-                  Proceso
+                <Link to="/preguntas-frecuentes" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                  Preguntas frecuentes
                 </Link>
               </li>
             </ul>

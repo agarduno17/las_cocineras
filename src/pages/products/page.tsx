@@ -96,20 +96,32 @@ export default function ProductsPage() {
     },
     {
       id: 7,
-      title: 'Kikoleta de madera de pino',
-      description: 'Línea kikoleta en medidas troqueladas y aserradas.',
+      title: 'Kikoletas troqueladas',
+      description: 'Kikoletas troqueladas de madera de pino en distintas medidas.',
       images: [
         '/images/products/kikoleta_madera_8@4x.webp',
         '/images/products/kikoleta_madera_9_5@4x.webp',
-        '/images/products/kikoleta_madera_11_5@4x.webp',
-        '/images/products/kikoleta_madera_12@4x.webp'
+        '/images/products/kikoleta_madera_11_5@4x.webp'
       ],
-      variants: ['#8 troquelada', '#9.5 troquelada', '#11.5 troquelada', '#12 aserrada'],
+      variants: ['#8 troquelada', '#9.5 troquelada', '#11.5 troquelada'],
       features: [
         'Diseño especializado para paletas y postres',
         'Acabado suave al tacto',
         'Fabricación en madera de pino',
         'Presentaciones conforme a catálogo'
+      ],
+      icon: 'ri-goblet-line'
+    },
+    {
+      id: 11,
+      title: 'Kikoleta aserrada de madera de pino',
+      description: 'Kikoleta aserrada del #12, presentación independiente del catálogo.',
+      images: ['/images/products/kikoleta_madera_12@4x.webp'],
+      features: [
+        'Medida #12 aserrada',
+        'Acabado tradicional',
+        'Madera de pino seleccionada',
+        'Empaque conforme a catálogo'
       ],
       icon: 'ri-goblet-line'
     },
@@ -256,13 +268,13 @@ export default function ProductsPage() {
 
             {/* Custom Orders Notice */}
             <div className="mt-12 bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-8 text-center text-white shadow-xl">
-              <i className="ri-ruler-line text-5xl mb-4"></i>
-              <h3 className="text-2xl font-bold mb-2">¿Necesitas medidas personalizadas?</h3>
+              <i className="ri-archive-2-line text-5xl mb-4"></i>
+              <h3 className="text-2xl font-bold mb-2">Pregunta por nuestros empaques</h3>
               <p className="text-lg mb-6 opacity-90">
-                Fabricamos productos con las especificaciones exactas que tu negocio necesita
+                Adaptamos nuestros empaques al volumen y especificaciones que tu negocio necesita
               </p>
               <a
-                href="/contacto?producto=Varios%20productos"
+                href="/contacto?producto=Empaques%20personalizados"
                 className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg whitespace-nowrap cursor-pointer"
               >
                 Contactar ahora

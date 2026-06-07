@@ -121,25 +121,6 @@ export default function FAQPage() {
               ))}
             </div>
 
-            {/* Still Have Questions CTA */}
-            <div className="mt-16 bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-8 text-center shadow-xl">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-4 shadow-lg">
-                <i className="ri-customer-service-2-line text-3xl text-red-600"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
-                ¿Tienes más preguntas?
-              </h3>
-              <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
-                Nuestro equipo está listo para ayudarte. Contáctanos y resolveremos todas tus dudas
-              </p>
-              <a
-                href="/contacto"
-                className="inline-flex items-center space-x-2 bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg whitespace-nowrap cursor-pointer"
-              >
-                <span>Contactar ahora</span>
-                <i className="ri-arrow-right-line"></i>
-              </a>
-            </div>
           </div>
         </section>
       </main>

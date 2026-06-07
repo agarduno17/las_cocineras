@@ -4,10 +4,16 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
+      {/*
+        TODO (2.1 cliente): Reemplazar esta imagen por el logo de Surtipalillos
+        o una imagen original de productos (caja máster de Las cocineras).
+        Cuando el cliente envíe el archivo, colocarlo en public/images/hero/...
+        y actualizar el src de abajo.
+      */}
       <div className="absolute inset-0 w-full h-full">
         <img
           src="https://readdy.ai/api/search-image?query=Artistic%20wooden%20pine%20toothpicks%20and%20wooden%20sticks%20arranged%20beautifully%20with%20fresh%20appetizers%20and%20street%20food%2C%20professional%20food%20photography%2C%20warm%20amber%20and%20golden%20tones%20creating%20strong%20contrast%20with%20text%2C%20soft%20bokeh%20background%2C%20elegant%20presentation%2C%20high%20quality%20commercial%20photography&width=1920&height=1080&seq=hero-bg-001&orientation=landscape"
-          alt="Las cocineras - Palillos de madera"
+          alt="Surtipalillos - Las cocineras"
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
@@ -21,11 +27,11 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-          Palillos de madera de pino<br />para alimentos y uso médico
+          Surtipalillos de alta calidad
         </h1>
 
         <p className="text-xl sm:text-2xl text-white/90 mb-12 max-w-3xl mx-auto">
-          Fabricación y venta de palillos de calidad para botanas, elotes, helados, paletas, abatelenguas y más
+          Para hogar, ferias, paleterías, restaurantes, papelerías, puestos, eventos especiales y más
         </p>
 
         {/* CTA Buttons */}

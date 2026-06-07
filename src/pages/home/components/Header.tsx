@@ -24,7 +24,6 @@ export default function Header() {
     { name: 'Productos', path: '/productos' },
     { name: 'Aplicaciones', path: '/aplicaciones' },
     { name: 'Nosotros', path: '/nosotros' },
-    { name: 'Proceso', path: '/proceso' },
     { name: 'Preguntas frecuentes', path: '/preguntas-frecuentes' },
     { name: 'Contacto', path: '/contacto' }
   ];
