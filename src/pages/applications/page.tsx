@@ -1,69 +1,9 @@
 import { Link } from 'react-router-dom';
 import Header from '../home/components/Header';
 import Footer from '../home/components/Footer';
+import { applications } from '../../data/applications';
 
 export default function ApplicationsPage() {
-  // Cada aplicación apunta a /productos?aplicacion=<slug> para que la página
-  // de productos pueda filtrar/destacar los palillos relevantes (4.2 cliente).
-  const applications = [
-    {
-      id: 1,
-      title: 'Restaurantes y cocinas',
-      description: 'Palillos para botanas, brochetas y presentaciones elegantes en restaurantes de todo tipo.',
-      icon: 'ri-restaurant-line',
-      color: 'from-red-500 to-red-700',
-      slug: 'restaurantes'
-    },
-    {
-      id: 2,
-      title: 'Food trucks',
-      description: 'Productos resistentes y prácticos para negocios móviles de comida callejera.',
-      icon: 'ri-truck-line',
-      color: 'from-red-600 to-red-800',
-      slug: 'food-trucks'
-    },
-    {
-      id: 3,
-      title: 'Puestos de antojitos',
-      description: 'Palillos para elotes, esquites, brochetas y todo tipo de antojitos mexicanos.',
-      icon: 'ri-store-2-line',
-      color: 'from-red-500 to-red-700',
-      slug: 'antojitos'
-    },
-    {
-      id: 4,
-      title: 'Heladerías y paleterías',
-      description: 'Palitos para paletas, cucharas para helados y productos para postres congelados.',
-      icon: 'ri-contrast-drop-2-line',
-      color: 'from-red-600 to-red-800',
-      slug: 'heladerias-paleterias'
-    },
-    {
-      id: 5,
-      title: 'Pastelerías y cafeterías',
-      description: 'Palillos decorativos, cucharas de madera y productos para repostería.',
-      icon: 'ri-cake-3-line',
-      color: 'from-red-500 to-red-700',
-      slug: 'pastelerias-cafeterias'
-    },
-    {
-      id: 7,
-      title: 'Organizadores de eventos',
-      description: 'Productos para banquetes, bodas, fiestas y eventos corporativos.',
-      icon: 'ri-calendar-event-line',
-      color: 'from-red-500 to-red-700',
-      slug: 'eventos'
-    },
-    {
-      id: 8,
-      title: 'Hoteles y catering',
-      description: 'Soluciones profesionales para servicios de alimentos en hoteles y catering.',
-      icon: 'ri-hotel-line',
-      color: 'from-red-600 to-red-800',
-      slug: 'hoteles-catering'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -90,7 +30,7 @@ export default function ApplicationsPage() {
               {applications.map((app) => (
                 <Link
                   key={app.id}
-                  to={`/productos?aplicacion=${app.slug}`}
+                  to={app.productIds ? `/productos?aplicacion=${app.slug}` : '/productos'}
                   className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1 cursor-pointer block focus:outline-none focus:ring-2 focus:ring-red-500"
                   aria-label={`Ver palillos para ${app.title}`}
                 >

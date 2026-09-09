@@ -1,9 +1,13 @@
 import { useState } from 'react';
+import { useSearchParams, Link } from 'react-router-dom';
 import Header from '../home/components/Header';
 import Footer from '../home/components/Footer';
+import { filterProductsByApplication } from '../../data/applications';
 
 export default function ProductsPage() {
   const [activeImages, setActiveImages] = useState<Record<number, number>>({});
+  const [searchParams, setSearchParams] = useSearchParams();
+  const aplicacionSlug = searchParams.get('aplicacion');
 
   const products = [
     {
@@ -168,6 +172,15 @@ export default function ProductsPage() {
 
   const getActiveImage = (id: number) => (activeImages?.[id] ?? 0);
 
+  const { filtered: visibleProducts, application } = filterProductsByApplication(
+    products,
+    aplicacionSlug
+  );
+
+  const clearFilter = () => {
+    setSearchParams({});
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -189,9 +202,32 @@ export default function ProductsPage() {
               </p>
             </div>
 
+            {/* Application Filter Banner */}
+            {application && application.productIds && application.productIds.length > 0 && (
+              <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-red-50 border border-red-200 rounded-2xl px-6 py-4">
+                <div className="flex items-center gap-3">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${application.color} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`}>
+                    <i className={`${application.icon} text-2xl text-white`}></i>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm text-red-700 font-semibold">Productos para</p>
+                    <h2 className="text-lg font-bold text-gray-900 leading-tight">{application.title}</h2>
+                  </div>
+                </div>
+                <Link
+                  to="/productos"
+                  onClick={clearFilter}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-red-600 hover:text-red-700 bg-white border border-red-200 rounded-lg px-4 py-2 transition-all hover:bg-red-50 whitespace-nowrap"
+                >
+                  Ver todos los productos
+                  <i className="ri-arrow-right-line"></i>
+                </Link>
+              </div>
+            )}
+
             {/* Products Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-product-shop>
-              {products.map((product) => (
+              {visibleProducts.map((product) => (
                 <div
                   key={product.id}
                   className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
